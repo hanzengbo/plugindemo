@@ -1,0 +1,4 @@
+include ':app'
+include ':testlib'
+include ':livelogplugin'
+include ':buildsrc'

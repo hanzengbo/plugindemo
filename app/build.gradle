@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: com.hzb.plugin.PluginImpl
+//apply plugin: 'wbliveplugin'
+
+wbLivePluginExtension {
+    injectPackagesKey 'com.example.zengbo1', 'com.project.one' , 'com.test.lib'
+    disinjectClassSuffix 'Bean', 'Util', 'Utils'
+    logTag = "WBLiveLog"
+    injectEnable true
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.example.zengbo1.plugintest"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            def dirs = ['main', 'p_projectone']
+            dirs.each { dir ->
+                java.srcDir("src/$dir/java")
+                res.srcDir("src/$dir/res")
+                //manifest.srcFile "src/$dir/AndroidManifest.xml"
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project (":testlib")
+}
+
+task testTask1 {
+    println "testTash body"
+}
+
