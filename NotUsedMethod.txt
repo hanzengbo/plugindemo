@@ -1,0 +1,8 @@
+MethodNotUsed:com.abstractclass.AbstractClass[void doNoUseHandler()]
+MethodNotUsed:com.abstractclass.AbstractClass[void doAbstractHandler()]
+MethodNotUsed:com.abstractclass.ITestInterface[void onNoUseInterface()]
+MethodNotUsed:com.abstractclass.TestBean[int getB()]
+MethodNotUsed:com.abstractclass.TestUtil[void doNoUseTest()]
+MethodNotUsed:com.example.zengbo1.plugintest.MainActivity[void onNoUseInterface()]
+ClassNotUsed:com.project.one.ProjectOne
+NotUsedClassCount:1   mNotUsedMethodCount:6

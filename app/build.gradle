@@ -9,6 +9,11 @@ wbLivePluginExtension {
     injectEnable true
 }
 
+checkMethodUsedExtension {
+    mappingFilePath = project.buildDir.getAbsolutePath() + "/outputs/mapping/release/mapping.txt"
+    outFilePath = rootProject.rootDir.getAbsolutePath() + "/NotUsedMethod.txt"
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
@@ -22,7 +27,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

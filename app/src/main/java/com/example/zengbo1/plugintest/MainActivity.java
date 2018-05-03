@@ -32,6 +32,11 @@ public class MainActivity extends Activity implements ITestInterface{
         Log.e("MainActivity", "onTestInterface");
     }
 
+    @Override
+    public void onNoUseInterface() {
+
+    }
+
     private void doHandleProjectOne() {
         findViewById(R.id.btProjectOne).setOnClickListener(new View.OnClickListener() {
             @Override

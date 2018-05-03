@@ -12,5 +12,9 @@ public abstract class AbstractClass {
         Log.e("AbstractClass", "do Handler");
     }
 
+    public void doNoUseHandler() {
+        Log.e("AbstractClass", "doNoUseHandler");
+    }
+
     public abstract void doAbstractHandler();
 }
